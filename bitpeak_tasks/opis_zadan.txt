@@ -1,0 +1,35 @@
+	 
+Zadanie #1 
+
+1.	Bazując na bibliotekach pandas (https://github.com/pandas-dev/pandas) i faker (https://github.com/joke2k/faker), a konkretnie metodzie ssn z klasy Provider dla lokalizacji pl_PL (https://github.com/joke2k/faker/blob/master/faker/providers/ssn/pl_PL/__init__.py#L33) zaimplementuj funkcję o nazwie generate_ssns, która zwraca obiekt typu Series z liczbą rekordów określoną parametrem wejściowym funkcji oraz wartościami reprezentującymi wygenerowane losowe numery PESEL. 
+
+2.	Zaimplementuj funkcję generate_unique_ssns (w dowolny sposób), która zwraca obiekt typu Series z liczbą rekordów określoną parametrem wejściowym funkcji oraz wartościami reprezentującymi wygenerowane losowe i unikalne (tylko w ramach zwracanej kolekcji) numery PESEL właściwe dla osób o płci (żeńska/męska) oraz urodzonych w przedziale dat (od-do) określonymi również parametrami wejściowymi tej funkcji. 
+
+3.	Następnie zaimplementuj wywołania funkcji generate_ssns oraz generate_unique_ssns dla 1 000, 10 000 i 100 000 rekordów, wskazując wybraną płeć oraz przedział dat urodzenia od 1990-01-01 do 1990-01-19. Dokonaj pomiaru i wyświetl czas trwania ich wykonania (osobno dla każdego wywołania każdej z tych dwóch funkcji). 
+
+4.	Zaimplementuj funkcję o nazwie validate_ssn, która na wejściu przyjmuje numer PESEL wraz z określeniem oczekiwanej płci (żeńska/męska/dowolna) i daty urodzenia (konkretna/określona lub dowolna), a na wyjściu zwraca informację o poprawności numeru PESEL. Wewnątrz funkcji zawrzyj logikę weryfikującą poprawność syntaktyczną numeru PESEL z uwzględnieniem informacji o oczekiwanej płci oraz dacie urodzenia. Następnie przetestuj działanie funkcji validate_ssn na przykładowych danych. 
+
+Zadanie #2 
+
+1.	Korzystając z biblioteki sqlite3 utwórz nową bazę danych z tabelą FlightLeg, która będzie zawierała informację o lotach samolotów, z następującymi kolumnami: 
+•	id — identyfikator numeryczny nadawany z sekwencji 
+•	tailNumber — identyfikator samolotu 
+•	sourceAirportCode, destinationAirportCode — trzyliterowy kod lotniska (wg IATA) 
+•	sourceCountryCode, destinationCountryCode — trzyliterowy kod kraju (wg ISO 3166-1 Alpha-3) 
+•	departureTimeUtc, landingTimeUtc — data i czas (z dokładnością do sekundy) odpowiednio odlotu i lądowania samolotu (w UTC) 
+
+2.	Wypełnij tabelę FlightLeg danymi z pliku: https://bitpeak.pl/datasets/flightlegs.csv 
+
+3.	Dodaj do tabeli dwie nowe kolumny: 
+•	flightDuration — wypełnij ją wartościami określającymi czas trwania lotu w minutach (zaokrągl wartości do najbliższej liczby całkowitej) 
+•	flightType — wypełnij ją wartościami określającymi typ lotu: krajowy (wartość ‘D’ = domestic) lub zagraniczny (wartość ‘I’ = international); lot krajowy to lot zaczynający się i kończący w tym samym kraju 
+
+4.	Zaimplementuj logikę odpowiadającą na poniższe pytania: 
+1.	Który samolot wykonał najwięcej lotów? 
+2.	Który samolot przeleciał najwięcej minut? 
+3.	Który lot, w podziale na krajowe i zagraniczne, był najkrótszy, a który najdłuższy, i ile minut trwał? 
+4.	(punkt opcjonalny) Ile jest błędnych rekordów opisujących loty, które wskazują, że samolot wykonywał więcej niż jeden lot jednocześnie? Wyświetl wszystkie pary takich konfliktowych lotów. 
+
+5.	(punkt opcjonalny) Odstęp pomiędzy którymi lotami tego samego dowolnego samolotu był najkrótszy i ile minut trwał? 
+
+Uwaga: Lot identyfikowany jest przez parę wartości tailNumber oraz departureTimeUtc. 
