@@ -1,0 +1,16 @@
+
+
+-- Basic class definition
+-- Instance methods
+-- Instance types
+-- Class methods and members
+-- Inheritance
+-- Abstract classes
+-- Interfaces
+-- Composition
+-- Magic methods
+-- String Repr
+-- Eq and comparison
+-- Attribute access
+-- Callable obj
+-- Data Classes
